@@ -1,13 +1,13 @@
 # nginx-certbot-issuer
-Lets Encrypt SSL Certificate issuer with Docker, Certbot and Nginx.
-This project used for issue SSL Cert, which can be installed for securing the services communication with HTTPS
+Let's Encrypt SSL Certificate issuer with Docker, Certbot and Nginx.
+This project is used to issue SSL Cert, which can be installed for securing the services communication with HTTPS
 
 Note: 
 _The certificate issued is free, but we have to renew it every 3 months_
 
 ## Prerequisite
 * A managed domain name
-* An Accessable host machine from internet with docker installed
+* An Accessible host machine from the internet with Docker installed
 
 ## How to issue a certificate
 
@@ -15,12 +15,12 @@ Following the steps below to issue the SSL certificate
 1. Create DNS A Record for SSL Domain Name
     * Manage Domain > DNS/NameServer > Create A Record:
         1. Type = A
-        2. Name = ${Domain Name} (This could be sub domain name ex: admin.{example.com})
+        2. Name = ${Domain Name} (This could be sub-domain name ex: admin.{example.com})
         3. TTL = 3600
         4. Data = Server IP
 2. Test if host accessible
     * Run Nginx server: ```docker compose -f docker-compose-nginx.yml up nginx ```
-    * Test the access: ```curl {Domain Name}``` (we can check the log on above docker compose as well)
+    * Test the access: ```curl {Domain Name}``` (we can check the log on the above docker compose as well)
     * Clean the test: ```docker compose -f docker-compose-nginx.yml down```
 3. Issue SSL Certificate
     
