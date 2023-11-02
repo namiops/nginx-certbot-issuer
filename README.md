@@ -29,6 +29,8 @@ Following the steps below to issue the SSL certificate
         EMAIL=your_email@
         DOMAIN_NAME=your_domain_name      #Ex: admin.example.com
         ```
+        Note: _If the host is the home machine, we need to config the home router PORT_FORWARD. And update the local ```hosts`` file with the DOMAIN_NAME ```127.0.0.1 localhost $YOUR_DOMAIN_NAME```_
+        
     * Run Nginx Server on host for Lets Encrypt challenges the Domain eligible
         
         ```docker compose up -d nginx```
@@ -58,7 +60,7 @@ Following the steps below to issue the SSL certificate
     ```
     * The certificates are stored in ```./certbot/conf/live/admin.{Domain Name}/```
     
-4. Clean up and done 
+5. Clean up and done 
     
     ```docker compose down```
 
